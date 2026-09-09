@@ -1,0 +1,36 @@
+// Split from lucide-react's "truck" (cab/bed paths + two independent wheel
+// circles). On hover the wheels spin like it's driving off. Parent needs `group`.
+export function AnimatedTruck({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2" />
+      <path d="M15 18H9" />
+      <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14" />
+      <circle
+        cx="17"
+        cy="18"
+        r="2"
+        style={{ transformBox: "fill-box", transformOrigin: "center" }}
+        className="group-hover:animate-icon-wheel-spin"
+      />
+      <circle
+        cx="7"
+        cy="18"
+        r="2"
+        style={{ transformBox: "fill-box", transformOrigin: "center" }}
+        className="group-hover:animate-icon-wheel-spin"
+      />
+    </svg>
+  );
+}

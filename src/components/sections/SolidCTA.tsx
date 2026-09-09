@@ -40,7 +40,7 @@ export function SolidCTA({
         )}
         <div className="relative mt-8 flex justify-center">
           <Button href={buttonHref} size="lg">
-            {buttonLabel} <ArrowRight className="h-4 w-4" />
+            {buttonLabel} <ArrowRight className="h-4 w-4 group-hover:animate-icon-nudge" />
           </Button>
         </div>
       </motion.div>

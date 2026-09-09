@@ -2,19 +2,23 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, Play, Cloud, BarChart3, Settings, Box } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+import { ArrowRight, Play } from "lucide-react";
+import type { IconComponent } from "@/types/icon";
 import { Button } from "@/components/ui/Button";
 import { useLoading } from "@/components/layout/LoadingContext";
 import RollingText from "@/components/ui/rolling-text";
+import { AnimatedCloud } from "@/components/ui/animated-icons/AnimatedCloud";
+import { AnimatedBarChart } from "@/components/ui/animated-icons/AnimatedBarChart";
+import { AnimatedSettings } from "@/components/ui/animated-icons/AnimatedSettings";
+import { AnimatedBox } from "@/components/ui/animated-icons/AnimatedBox";
 
-type HeroCard = { label: string; sub: string; icon: LucideIcon };
+type HeroCard = { label: string; sub: string; icon: IconComponent };
 
 const heroCards: HeroCard[] = [
-  { label: "Cloud", sub: "Ready", icon: Cloud },
-  { label: "Data", sub: "Driven", icon: BarChart3 },
-  { label: "AI", sub: "Automation", icon: Settings },
-  { label: "Scalable", sub: "Solutions", icon: Box },
+  { label: "Cloud", sub: "Ready", icon: AnimatedCloud },
+  { label: "Data", sub: "Driven", icon: AnimatedBarChart },
+  { label: "AI", sub: "Automation", icon: AnimatedSettings },
+  { label: "Scalable", sub: "Solutions", icon: AnimatedBox },
 ];
 
 // Tuned to sit directly on top of each glass panel in hero-background.png, centered
@@ -96,10 +100,7 @@ export function Hero() {
                 className="flex animate-float items-center gap-3 whitespace-nowrap"
                 style={{ animationDelay: `${i * 0.4}s` }}
               >
-                <Icon
-                  className="h-7 w-7 shrink-0 text-text-primary drop-shadow-[0_1px_2px_rgba(255,255,255,0.8)]"
-                  strokeWidth={1.75}
-                />
+                <Icon className="h-7 w-7 shrink-0 text-text-primary drop-shadow-[0_1px_2px_rgba(255,255,255,0.8)]" />
                 <span className="text-base font-semibold leading-tight text-text-primary [text-shadow:0_1px_2px_rgba(255,255,255,0.8),0_0_10px_rgba(255,255,255,0.5)]">
                   {card.label}
                   <br />
@@ -129,27 +130,27 @@ export function Hero() {
             <RollingText
               text="Technology"
               className="block leading-[1.4]! whitespace-nowrap"
-              minCycles={6}
+              minCycles={8}
               cycleVariance={3}
-              duration={4.6}
-              durationVariance={1.6}
+              duration={6}
+              durationVariance={2}
             />
             <RollingText
               text="that moves"
               textColor="var(--olive)"
               className="block leading-[1.4]! whitespace-nowrap"
-              minCycles={6}
+              minCycles={8}
               cycleVariance={3}
-              duration={4.6}
-              durationVariance={1.6}
+              duration={6}
+              durationVariance={2}
             />
             <RollingText
               text="what's next."
               className="block leading-[1.4]! whitespace-nowrap"
-              minCycles={6}
+              minCycles={8}
               cycleVariance={3}
-              duration={4.6}
-              durationVariance={1.6}
+              duration={6}
+              durationVariance={2}
             />
           </motion.h1>
 
@@ -161,11 +162,11 @@ export function Hero() {
 
           <motion.div variants={item} className="flex flex-col gap-3 pt-2 sm:flex-row">
             <Button href="/#contact" size="lg">
-              Start a Project <ArrowRight className="h-4 w-4" />
+              Start a Project <ArrowRight className="h-4 w-4 group-hover:animate-icon-nudge" />
             </Button>
             <Button href="/services" variant="secondary" size="lg">
               <span className="flex h-6 w-6 items-center justify-center rounded-full border border-olive/40">
-                <Play className="h-3 w-3 fill-olive text-olive" />
+                <Play className="h-3 w-3 fill-olive text-olive group-hover:animate-icon-press" />
               </span>
               See Our Solutions
             </Button>
@@ -189,7 +190,7 @@ export function Hero() {
               return (
                 <div
                   key={card.label + card.sub}
-                  className="glass-panel flex items-center gap-2.5 rounded-xl !bg-white/80 px-3 py-3 shadow-soft"
+                  className="group glass-panel flex items-center gap-2.5 rounded-xl !bg-white/80 px-3 py-3 shadow-soft"
                 >
                   <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg olive-gradient text-white">
                     <Icon className="h-4 w-4" />

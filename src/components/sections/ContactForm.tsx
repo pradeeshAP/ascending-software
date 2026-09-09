@@ -86,7 +86,7 @@ export function ContactForm() {
             We&apos;ll only use these details to respond to your enquiry.
           </p>
           <Button type="submit" size="lg" className="w-full sm:w-auto">
-            Submit Enquiry <ArrowRight className="h-4 w-4" />
+            Submit Enquiry <ArrowRight className="h-4 w-4 group-hover:animate-icon-nudge" />
           </Button>
         </div>
 

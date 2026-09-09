@@ -56,16 +56,20 @@ export function Navbar() {
 
         <div className="hidden shrink-0 lg:block">
           <Button href="/contact" size="sm">
-            Start a Project <ArrowRight className="h-4 w-4" />
+            Start a Project <ArrowRight className="h-4 w-4 group-hover:animate-icon-nudge" />
           </Button>
         </div>
 
         <button
           aria-label="Toggle menu"
           onClick={() => setOpen((v) => !v)}
-          className="flex h-9 w-9 items-center justify-center rounded-full text-text-primary lg:hidden"
+          className="group flex h-9 w-9 items-center justify-center rounded-full text-text-primary lg:hidden"
         >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {open ? (
+            <X className="h-5 w-5 group-hover:animate-icon-spin-close" />
+          ) : (
+            <Menu className="h-5 w-5 group-hover:animate-icon-press" />
+          )}
         </button>
       </div>
 
@@ -93,7 +97,7 @@ export function Navbar() {
             ))}
             <div className="mt-2 px-1">
               <Button href="/contact" className="w-full" onClick={() => setOpen(false)}>
-                Start a Project <ArrowRight className="h-4 w-4" />
+                Start a Project <ArrowRight className="h-4 w-4 group-hover:animate-icon-nudge" />
               </Button>
             </div>
           </motion.div>

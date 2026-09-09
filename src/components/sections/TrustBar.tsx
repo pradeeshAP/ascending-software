@@ -19,7 +19,7 @@ export function TrustBar() {
           {trustItems.map((t) => {
             const Icon = t.icon;
             return (
-              <div key={t.line1} className="flex items-center gap-3">
+              <div key={t.line1} className="group flex items-center gap-3">
                 <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-black/10 text-olive">
                   <Icon className="h-4 w-4" />
                 </span>
@@ -42,7 +42,7 @@ export function TrustBar() {
             <span className="text-xs text-text-secondary">What&apos;s Next Together</span>
           </span>
           <span className="ml-2 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-black/10 text-text-primary transition-colors group-hover:border-olive group-hover:text-olive">
-            <ArrowRight className="h-4 w-4" />
+            <ArrowRight className="h-4 w-4 group-hover:animate-icon-nudge" />
           </span>
         </Link>
       </motion.div>

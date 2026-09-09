@@ -27,7 +27,7 @@ export function FinalCTA() {
         </p>
         <div className="relative mt-8 flex justify-center">
           <Button href="/contact" size="lg">
-            Start a Project <ArrowRight className="h-4 w-4" />
+            Start a Project <ArrowRight className="h-4 w-4 group-hover:animate-icon-nudge" />
           </Button>
         </div>
       </motion.div>

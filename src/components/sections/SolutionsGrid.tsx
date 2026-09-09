@@ -32,7 +32,7 @@ export function SolutionsGrid() {
           const palette = getShaderPalette(index);
           return (
             <RevealItem key={solution.slug}>
-              <div className="relative h-80">
+              <div className="group relative h-80">
                 <div className="absolute inset-0 overflow-hidden rounded-2xl">
                   <Warp
                     style={{ height: "100%", width: "100%" }}
@@ -59,8 +59,8 @@ export function SolutionsGrid() {
                   </h3>
                   <ul className="flex flex-col gap-2">
                     {solution.bullets.slice(0, 3).map((bullet) => (
-                      <li key={bullet} className="flex items-start gap-2 text-sm text-white/70">
-                        <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-olive-300" />
+                      <li key={bullet} className="group flex items-start gap-2 text-sm text-white/70">
+                        <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-olive-300 group-hover:animate-icon-pop" />
                         <span>{bullet}</span>
                       </li>
                     ))}

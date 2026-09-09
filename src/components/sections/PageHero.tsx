@@ -4,10 +4,10 @@ import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
 import RollingText from "@/components/ui/rolling-text";
 
 const rollingProps = {
-  minCycles: 6,
+  minCycles: 8,
   cycleVariance: 3,
-  duration: 4.6,
-  durationVariance: 1.6,
+  duration: 6,
+  durationVariance: 2,
 };
 
 export function PageHero({

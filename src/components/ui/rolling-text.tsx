@@ -122,15 +122,22 @@ const RollingText = ({
         if (hoverReroll) {
           const onEnter = () => {
             gsap.killTweensOf(scroll);
+            // The extra distance MUST be a whole number of copies. All copies
+            // are identical, so landing exactly on one is visually seamless —
+            // but the previous version added a fractional amount, so the tween
+            // finished mid-blend between two copies and the subsequent reset
+            // to an integer position was a visible, jarring jump. Landing on
+            // a whole copy first means there's nothing left to correct.
+            const extraCycles = 1 + Math.floor(Math.random() * 2); // 1 or 2
             gsap.to(scroll, {
-              k: `+=${1 + Math.random()}`,
-              duration: 0.55 + Math.random() * 0.3,
-              ease: "power2.out",
+              k: `+=${extraCycles}`,
+              duration: 1.1 + Math.random() * 0.4,
+              ease: "power3.out",
               onUpdate: () => reel.style.setProperty("--k", String(scroll.k)),
               onComplete: () => {
-                // All reel copies are identical, so snapping back to the base
-                // resting position is visually seamless — this just keeps k
-                // from growing without bound across repeated hovers.
+                // Already resting on a whole copy — snapping the counter back
+                // to `to` (identical-looking glyph) just keeps it from
+                // growing without bound across repeated hovers.
                 scroll.k = to;
                 reel.style.setProperty("--k", String(to));
               },

@@ -1,4 +1,4 @@
-import { Sparkles } from "lucide-react";
+import { AnimatedSparkles } from "@/components/ui/animated-icons/AnimatedSparkles";
 import { techStack, techStackTrailingLabel } from "@/data/techstack";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { RevealGroup, RevealItem, RevealOnScroll } from "@/components/ui/RevealOnScroll";
@@ -33,8 +33,8 @@ export function TechStack() {
         ))}
       </RevealGroup>
 
-      <RevealOnScroll className="mt-6 flex items-center gap-2 text-sm font-medium text-olive">
-        <Sparkles className="h-4 w-4" />
+      <RevealOnScroll className="group mt-6 flex items-center gap-2 text-sm font-medium text-olive">
+        <AnimatedSparkles className="h-4 w-4" />
         {techStackTrailingLabel}
       </RevealOnScroll>
     </section>

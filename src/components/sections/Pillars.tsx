@@ -9,7 +9,7 @@ export function Pillars() {
         const Icon = pillar.icon;
         return (
           <RevealItem key={pillar.title}>
-            <GlassCard className="flex h-full flex-col gap-4 p-7">
+            <GlassCard className="group flex h-full flex-col gap-4 p-7">
               <span className="flex h-11 w-11 items-center justify-center rounded-xl olive-gradient text-white">
                 <Icon className="h-5 w-5" />
               </span>

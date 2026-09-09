@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, Phone } from "lucide-react";
 import { solutions } from "@/data/solutions";
 import { navLinks } from "@/data/nav";
 import { contactDetails } from "@/data/contact";
@@ -39,9 +38,9 @@ export function Footer() {
                   key={i}
                   href="#"
                   aria-label="Social link"
-                  className="flex h-9 w-9 items-center justify-center rounded-full border border-black/10 text-text-secondary transition-colors hover:border-olive hover:text-olive"
+                  className="group flex h-9 w-9 items-center justify-center rounded-full border border-black/10 text-text-secondary transition-colors hover:border-olive hover:text-olive"
                 >
-                  <Icon className="h-4 w-4" />
+                  <Icon className="h-4 w-4 group-hover:animate-icon-pop" />
                 </a>
               ))}
             </div>
@@ -84,18 +83,18 @@ export function Footer() {
             {email && (
               <a
                 href={email.href}
-                className="flex items-center gap-2 text-sm text-text-secondary transition-colors hover:text-olive"
+                className="group flex items-center gap-2 text-sm text-text-secondary transition-colors hover:text-olive"
               >
-                <Mail className="h-4 w-4" />
+                <email.icon className="h-4 w-4" />
                 {email.lines[0]}
               </a>
             )}
             {phone && (
               <a
                 href={phone.href}
-                className="flex items-center gap-2 text-sm text-text-secondary transition-colors hover:text-olive"
+                className="group flex items-center gap-2 text-sm text-text-secondary transition-colors hover:text-olive"
               >
-                <Phone className="h-4 w-4" />
+                <phone.icon className="h-4 w-4" />
                 {phone.lines[0]}
               </a>
             )}

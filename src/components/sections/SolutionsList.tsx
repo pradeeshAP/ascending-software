@@ -15,7 +15,7 @@ export function SolutionsList() {
           <RevealItem key={solution.slug}>
             <div
               id={solution.slug}
-              className="relative scroll-mt-32 overflow-hidden rounded-3xl border border-white/15"
+              className="group relative scroll-mt-32 overflow-hidden rounded-3xl border border-white/15"
             >
               <div className="absolute inset-0">
                 <Warp

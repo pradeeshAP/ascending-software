@@ -4,10 +4,11 @@ import Link from "next/link";
 import { motion, type HTMLMotionProps } from "framer-motion";
 import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
-import type { ReactNode } from "react";
+import { useMagnetic } from "@/hooks/useMagnetic";
+import { useRef, type ReactNode } from "react";
 
 const buttonStyles = cva(
-  "inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors duration-200 whitespace-nowrap",
+  "group inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-colors duration-200 whitespace-nowrap",
   {
     variants: {
       variant: {
@@ -38,6 +39,8 @@ type ButtonProps = VariantProps<typeof buttonStyles> & {
 
 export function Button({ href, children, className, variant, size, onClick, ...props }: ButtonProps) {
   const classes = cn(buttonStyles({ variant, size }), className);
+  const magneticRef = useRef<HTMLDivElement & HTMLButtonElement>(null);
+  const magnetic = useMagnetic(magneticRef);
 
   const motionProps = {
     whileHover: { scale: 1.03 },
@@ -47,7 +50,14 @@ export function Button({ href, children, className, variant, size, onClick, ...p
 
   if (href) {
     return (
-      <motion.div {...motionProps} className="inline-block">
+      <motion.div
+        ref={magneticRef}
+        {...motionProps}
+        style={{ x: magnetic.x, y: magnetic.y }}
+        onMouseMove={magnetic.handleMouseMove}
+        onMouseLeave={magnetic.handleMouseLeave}
+        className="inline-block"
+      >
         <Link href={href} className={classes} onClick={onClick}>
           {children}
         </Link>
@@ -56,7 +66,16 @@ export function Button({ href, children, className, variant, size, onClick, ...p
   }
 
   return (
-    <motion.button {...motionProps} className={classes} onClick={onClick} {...props}>
+    <motion.button
+      ref={magneticRef}
+      {...motionProps}
+      style={{ x: magnetic.x, y: magnetic.y }}
+      onMouseMove={magnetic.handleMouseMove}
+      onMouseLeave={magnetic.handleMouseLeave}
+      className={classes}
+      onClick={onClick}
+      {...props}
+    >
       {children}
     </motion.button>
   );

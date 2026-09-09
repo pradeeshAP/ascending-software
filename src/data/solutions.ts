@@ -1,19 +1,17 @@
-import {
-  Box,
-  Cloud,
-  BrainCircuit,
-  Database,
-  Braces,
-  MonitorSmartphone,
-  ShieldCheck,
-  Layers,
-  type LucideIcon,
-} from "lucide-react";
+import type { IconComponent } from "@/types/icon";
+import { AnimatedBox } from "@/components/ui/animated-icons/AnimatedBox";
+import { AnimatedCloud } from "@/components/ui/animated-icons/AnimatedCloud";
+import { AnimatedBrainCircuit } from "@/components/ui/animated-icons/AnimatedBrainCircuit";
+import { AnimatedDatabase } from "@/components/ui/animated-icons/AnimatedDatabase";
+import { AnimatedBraces } from "@/components/ui/animated-icons/AnimatedBraces";
+import { AnimatedMonitorSmartphone } from "@/components/ui/animated-icons/AnimatedMonitorSmartphone";
+import { AnimatedShieldCheck } from "@/components/ui/animated-icons/AnimatedShieldCheck";
+import { AnimatedLayers } from "@/components/ui/animated-icons/AnimatedLayers";
 
 export type Solution = {
   slug: string;
   name: string;
-  icon: LucideIcon;
+  icon: IconComponent;
   summary: string;
   description: string;
   bullets: string[];
@@ -23,7 +21,7 @@ export const solutions: Solution[] = [
   {
     slug: "microservices-event-driven",
     name: "Microservices & Event-Driven Systems",
-    icon: Box,
+    icon: AnimatedBox,
     summary: "Distributed architectures built to move data and events in real time.",
     description:
       "Architecture that decouples your systems so teams can ship independently, and your platform keeps running under real load.",
@@ -37,7 +35,7 @@ export const solutions: Solution[] = [
   {
     slug: "cloud-enablement-devops",
     name: "Cloud Enablement & DevOps",
-    icon: Cloud,
+    icon: AnimatedCloud,
     summary: "Cloud-native foundations with automated delivery from commit to production.",
     description:
       "We move you to the cloud deliberately — with the pipelines and infrastructure code that make deployment routine, not risky.",
@@ -51,7 +49,7 @@ export const solutions: Solution[] = [
   {
     slug: "ai-intelligent-automation",
     name: "AI & Intelligent Automation",
-    icon: BrainCircuit,
+    icon: AnimatedBrainCircuit,
     summary: "Generative AI and automation that remove manual work from your operations.",
     description:
       "Generative AI and automation applied where it actually removes manual work — not bolted on for the sake of it.",
@@ -65,7 +63,7 @@ export const solutions: Solution[] = [
   {
     slug: "data-analytics",
     name: "Data & Analytics",
-    icon: Database,
+    icon: AnimatedDatabase,
     summary: "Turning raw data into governed, real-time, decision-ready insight.",
     description:
       "From pipelines to dashboards — we turn scattered data into decisions your team can actually act on in real time.",
@@ -80,7 +78,7 @@ export const solutions: Solution[] = [
   {
     slug: "api-management-integration",
     name: "API Management & Integration",
-    icon: Braces,
+    icon: AnimatedBraces,
     summary: "Connective tissue between your systems, partners, and platforms.",
     description:
       "Clean, documented APIs that connect your systems to each other and to the third parties your business depends on.",
@@ -94,7 +92,7 @@ export const solutions: Solution[] = [
   {
     slug: "digital-experience-platforms",
     name: "Digital Experience & Platforms",
-    icon: MonitorSmartphone,
+    icon: AnimatedMonitorSmartphone,
     summary: "Web, mobile, and SaaS products designed around real user needs.",
     description:
       "Web and mobile products designed around your users first, built on platforms that can grow into full enterprise systems.",
@@ -108,7 +106,7 @@ export const solutions: Solution[] = [
   {
     slug: "security-compliance",
     name: "Security & Compliance",
-    icon: ShieldCheck,
+    icon: AnimatedShieldCheck,
     summary: "Secure by design, compliant by default, resilient under pressure.",
     description:
       "Security designed in from the architecture up — identity, data protection and the compliance posture regulated industries need.",
@@ -122,7 +120,7 @@ export const solutions: Solution[] = [
   {
     slug: "legacy-modernization",
     name: "Legacy Modernization",
-    icon: Layers,
+    icon: AnimatedLayers,
     summary: "Modernizing what already works so it keeps working for years to come.",
     description:
       "We untangle aging systems and move them onto cloud-native foundations — without breaking what already works.",

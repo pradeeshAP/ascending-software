@@ -1,16 +1,21 @@
 "use client";
 
-import type { LucideIcon } from "lucide-react";
-import { Layers, Cloud, BrainCircuit, ShieldCheck, BarChart3, TrendingUp } from "lucide-react";
+import type { IconComponent } from "@/types/icon";
 import { Warp } from "@paper-design/shaders-react";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { RevealGroup, RevealItem } from "@/components/ui/RevealOnScroll";
 import { getShaderPalette } from "@/lib/shaderPalettes";
+import { AnimatedLayers } from "@/components/ui/animated-icons/AnimatedLayers";
+import { AnimatedCloud } from "@/components/ui/animated-icons/AnimatedCloud";
+import { AnimatedBrainCircuit } from "@/components/ui/animated-icons/AnimatedBrainCircuit";
+import { AnimatedShieldCheck } from "@/components/ui/animated-icons/AnimatedShieldCheck";
+import { AnimatedBarChart } from "@/components/ui/animated-icons/AnimatedBarChart";
+import { AnimatedTrendingUp } from "@/components/ui/animated-icons/AnimatedTrendingUp";
 
 interface Feature {
   title: string;
   description: string;
-  icon: LucideIcon;
+  icon: IconComponent;
 }
 
 const features: Feature[] = [
@@ -18,36 +23,36 @@ const features: Feature[] = [
     title: "Modern Architecture",
     description:
       "Event-driven, microservices-based systems built to handle real-time data and scale on demand.",
-    icon: Layers,
+    icon: AnimatedLayers,
   },
   {
     title: "Cloud-Native by Default",
     description:
       "Infrastructure and delivery pipelines built for elasticity, resilience, and fast iteration.",
-    icon: Cloud,
+    icon: AnimatedCloud,
   },
   {
     title: "AI-Ready Systems",
     description:
       "Generative AI and automation woven into workflows, not bolted on as an afterthought.",
-    icon: BrainCircuit,
+    icon: AnimatedBrainCircuit,
   },
   {
     title: "Secure by Design",
     description:
       "Identity, data protection, and compliance built into the architecture from day one.",
-    icon: ShieldCheck,
+    icon: AnimatedShieldCheck,
   },
   {
     title: "Data-Driven Decisions",
     description:
       "Real-time analytics and governed data platforms your team can actually act on.",
-    icon: BarChart3,
+    icon: AnimatedBarChart,
   },
   {
     title: "Built to Scale",
     description: "Systems designed to absorb growth instead of being rebuilt because of it.",
-    icon: TrendingUp,
+    icon: AnimatedTrendingUp,
   },
 ];
 
@@ -68,7 +73,7 @@ export default function FeaturesCards() {
           const Icon = feature.icon;
           return (
             <RevealItem key={feature.title}>
-              <div className="relative h-80">
+              <div className="group relative h-80">
                 <div className="absolute inset-0 overflow-hidden rounded-3xl">
                   <Warp
                     style={{ height: "100%", width: "100%" }}

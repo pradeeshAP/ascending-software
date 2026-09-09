@@ -1,4 +1,4 @@
-import { CheckCircle2 } from "lucide-react";
+import { AnimatedCheckCircle } from "@/components/ui/animated-icons/AnimatedCheckCircle";
 import { whyChooseUs } from "@/data/whyChooseUs";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { RevealGroup, RevealItem } from "@/components/ui/RevealOnScroll";
@@ -23,8 +23,8 @@ export function WhyChooseUs({ narrative = false }: { narrative?: boolean }) {
             )}
           >
             {whyChooseUs.map((reason) => (
-              <RevealItem key={reason.title} className="flex items-start gap-3">
-                <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-olive-300" />
+              <RevealItem key={reason.title} className="group flex items-start gap-3">
+                <AnimatedCheckCircle className="mt-0.5 h-5 w-5 shrink-0 text-olive-300" />
                 <div className="flex flex-col gap-1">
                   <span className="font-display text-sm font-semibold text-text-inverse sm:text-base">
                     {reason.title}

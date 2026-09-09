@@ -1,7 +1,11 @@
-import { Mail, Phone, MapPin, Clock, type LucideIcon } from "lucide-react";
+import type { IconComponent } from "@/types/icon";
+import { AnimatedMail } from "@/components/ui/animated-icons/AnimatedMail";
+import { AnimatedPhone } from "@/components/ui/animated-icons/AnimatedPhone";
+import { AnimatedMapPin } from "@/components/ui/animated-icons/AnimatedMapPin";
+import { AnimatedClock } from "@/components/ui/animated-icons/AnimatedClock";
 
 export type ContactDetail = {
-  icon: LucideIcon;
+  icon: IconComponent;
   label: string;
   lines: string[];
   href?: string;
@@ -9,24 +13,24 @@ export type ContactDetail = {
 
 export const contactDetails: ContactDetail[] = [
   {
-    icon: Mail,
+    icon: AnimatedMail,
     label: "Email Us",
     lines: ["info@ascendingsoftware.com"],
     href: "mailto:info@ascendingsoftware.com",
   },
   {
-    icon: Phone,
+    icon: AnimatedPhone,
     label: "Call Us",
     lines: ["+91 88838 04379"],
     href: "tel:+918883804379",
   },
   {
-    icon: MapPin,
+    icon: AnimatedMapPin,
     label: "Visit Us",
     lines: ["D20 A, 'C' Colony, Perumalpuram,", "Tirunelveli — 627007, Tamil Nadu, India"],
   },
   {
-    icon: Clock,
+    icon: AnimatedClock,
     label: "Business Hours",
     lines: ["Mon – Sat · 9:00 AM – 6:30 PM IST"],
   },
