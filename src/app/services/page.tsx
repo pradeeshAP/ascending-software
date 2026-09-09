@@ -18,9 +18,11 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Our Solutions"
-        title="One partner, eight ways to build the systems your business runs on."
+        title="Built to run your business."
+        titleLines={["Built to run", "your business."]}
         description="From your first customer-facing website to the event-driven platforms that run your operations — here is the full range of what Ascending Software designs, builds and maintains."
         animateTitle
+        fullBleed
       />
 
       <RollingStatement

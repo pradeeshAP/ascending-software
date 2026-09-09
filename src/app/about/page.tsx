@@ -20,9 +20,11 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About Ascending Software"
-        title="Crafting tomorrow's intelligent software, today."
+        title="Built for what's next."
+        titleLines={["Built for", "what's next."]}
         description="We're a software & digital solutions studio that has spent over a decade helping businesses turn operational friction into systems that just work."
         animateTitle
+        fullBleed
       />
 
       <OurStory />

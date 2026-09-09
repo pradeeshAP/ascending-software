@@ -128,28 +128,28 @@ export function Hero() {
           >
             <RollingText
               text="Technology"
-              className="block leading-[1.2]! whitespace-nowrap"
-              minCycles={4}
+              className="block leading-[1.4]! whitespace-nowrap"
+              minCycles={6}
               cycleVariance={3}
-              duration={3.2}
-              durationVariance={1.4}
+              duration={4.6}
+              durationVariance={1.6}
             />
             <RollingText
               text="that moves"
               textColor="var(--olive)"
-              className="block leading-[1.2]! whitespace-nowrap"
-              minCycles={4}
+              className="block leading-[1.4]! whitespace-nowrap"
+              minCycles={6}
               cycleVariance={3}
-              duration={3.2}
-              durationVariance={1.4}
+              duration={4.6}
+              durationVariance={1.6}
             />
             <RollingText
               text="what's next."
-              className="block leading-[1.2]! whitespace-nowrap"
-              minCycles={4}
+              className="block leading-[1.4]! whitespace-nowrap"
+              minCycles={6}
               cycleVariance={3}
-              duration={3.2}
-              durationVariance={1.4}
+              duration={4.6}
+              durationVariance={1.6}
             />
           </motion.h1>
 

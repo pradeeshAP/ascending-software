@@ -12,7 +12,7 @@ const FONT_FAMILY = "var(--font-display), Helvetica Neue, Arial Narrow, system-u
 // original full-viewport demo look. Pass className to inherit a heading's own
 // size/weight instead (e.g. embedding this inline inside an <h1>).
 const DEFAULT_CLASS_NAME =
-  "text-9xl max-[1025px]:text-6xl max-md:text-5xl font-light! leading-[1.2]! tracking-[0.02em] whitespace-nowrap";
+  "text-9xl max-[1025px]:text-6xl max-md:text-5xl font-light! leading-[1.4]! tracking-[0.02em] whitespace-nowrap";
 
 interface RollingTextProps {
   text?: string;
@@ -89,13 +89,13 @@ const RollingText = ({
         // tall enough for every glyph's metrics — descenders (g, y) and
         // characters like commas visually extend past that box, bleeding
         // into the neighboring copy's slot and showing as a stray mark once
-        // the reel settles. 1.2em gives every glyph safe room. Re-measuring
+        // the reel settles. 1.4em gives every glyph safe room. Re-measuring
         // the actual rendered font-size and rounding to a whole pixel also
         // keeps the copy height and translate step in exact agreement
         // (fractional pixel values can otherwise leave a hairline sliver of
         // the neighboring copy visible at the clip edge).
         const fontSizePx = parseFloat(getComputedStyle(letter).fontSize);
-        const stepPx = Math.max(1, Math.round(fontSizePx * 1.2));
+        const stepPx = Math.max(1, Math.round(fontSizePx * 1.4));
         const invisible = letter.querySelector<HTMLElement>("[data-invisible]");
         const copies = reel.querySelectorAll<HTMLElement>("[data-copy]");
         if (invisible) invisible.style.height = `${stepPx}px`;
@@ -115,7 +115,7 @@ const RollingText = ({
         gsap.to(scroll, {
           k: to,
           duration: Number(reel.dataset.duration),
-          ease: "expo.out",
+          ease: "power3.out",
           onUpdate: () => reel.style.setProperty("--k", String(scroll.k)),
         });
 
@@ -167,7 +167,7 @@ const RollingText = ({
         <span
           data-invisible=""
           className="invisible flex leading-none items-center justify-center"
-          style={{ height: "1.2em" }}
+          style={{ height: "1.4em" }}
         >
           {char}
         </span>
@@ -178,14 +178,14 @@ const RollingText = ({
             data-to={reel.to}
             data-duration={reel.duration}
             className="block will-change-transform"
-            style={{ transform: "translateY(calc(var(--k, 0) * -1 * var(--step, 1.2em)))" }}
+            style={{ transform: "translateY(calc(var(--k, 0) * -1 * var(--step, 1.4em)))" }}
           >
             {Array.from({ length: reel.copies }, (_, copy) => (
               <span
                 key={copy}
                 data-copy=""
                 className="flex w-full leading-none items-center justify-center"
-                style={{ height: "1.2em" }}
+                style={{ height: "1.4em" }}
               >
                 {char}
               </span>
