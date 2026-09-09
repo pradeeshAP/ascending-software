@@ -20,6 +20,7 @@ export default function ServicesPage() {
         eyebrow="Our Solutions"
         title="One partner, eight ways to build the systems your business runs on."
         description="From your first customer-facing website to the event-driven platforms that run your operations — here is the full range of what Ascending Software designs, builds and maintains."
+        animateTitle
       />
 
       <RollingStatement

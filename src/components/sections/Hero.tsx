@@ -6,6 +6,7 @@ import { ArrowRight, Play, Cloud, BarChart3, Settings, Box } from "lucide-react"
 import type { LucideIcon } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { useLoading } from "@/components/layout/LoadingContext";
+import RollingText from "@/components/ui/rolling-text";
 
 type HeroCard = { label: string; sub: string; icon: LucideIcon };
 
@@ -123,13 +124,33 @@ export function Hero() {
 
           <motion.h1
             variants={item}
-            className="font-display text-[2.75rem] font-semibold leading-[1.05] tracking-tight text-text-primary sm:text-6xl lg:text-[4rem]"
+            className="font-display text-[2.75rem] font-semibold tracking-tight text-text-primary sm:text-6xl lg:text-[4rem]"
           >
-            Technology
-            <br />
-            <span className="text-olive">that moves</span>
-            <br />
-            what&apos;s next.
+            <RollingText
+              text="Technology"
+              className="block leading-[1.2]! whitespace-nowrap"
+              minCycles={4}
+              cycleVariance={3}
+              duration={3.2}
+              durationVariance={1.4}
+            />
+            <RollingText
+              text="that moves"
+              textColor="var(--olive)"
+              className="block leading-[1.2]! whitespace-nowrap"
+              minCycles={4}
+              cycleVariance={3}
+              duration={3.2}
+              durationVariance={1.4}
+            />
+            <RollingText
+              text="what's next."
+              className="block leading-[1.2]! whitespace-nowrap"
+              minCycles={4}
+              cycleVariance={3}
+              duration={3.2}
+              durationVariance={1.4}
+            />
           </motion.h1>
 
           <motion.p variants={item} className="max-w-md text-base leading-relaxed text-text-secondary sm:text-lg">

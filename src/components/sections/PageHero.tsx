@@ -1,17 +1,21 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
 import { RevealOnScroll } from "@/components/ui/RevealOnScroll";
+import RollingText from "@/components/ui/rolling-text";
 
 export function PageHero({
   eyebrow,
   title,
   description,
   children,
+  animateTitle = false,
 }: {
   eyebrow: string;
   title: string;
   description: string;
   children?: ReactNode;
+  /** Reveal the title with the letter-rolling effect instead of plain text. */
+  animateTitle?: boolean;
 }) {
   return (
     <section className="relative overflow-hidden pt-32 pb-16 sm:pt-40 sm:pb-20">
@@ -19,7 +23,18 @@ export function PageHero({
         <RevealOnScroll className="flex flex-col items-start gap-5">
           <span className="eyebrow">{eyebrow}</span>
           <h1 className="font-display text-4xl font-semibold leading-[1.1] tracking-tight text-balance text-text-primary sm:text-5xl lg:text-[3.2rem]">
-            {title}
+            {animateTitle ? (
+              <RollingText
+                text={title}
+                className="leading-[1.2]!"
+                minCycles={4}
+                cycleVariance={3}
+                duration={3.2}
+                durationVariance={1.4}
+              />
+            ) : (
+              title
+            )}
           </h1>
           <p className="max-w-lg text-base leading-relaxed text-text-secondary sm:text-lg">
             {description}
