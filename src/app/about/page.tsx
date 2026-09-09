@@ -7,6 +7,7 @@ import { WhyChooseUs } from "@/components/sections/WhyChooseUs";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { Industries } from "@/components/sections/Industries";
 import { SolidCTA } from "@/components/sections/SolidCTA";
+import { RollingStatement } from "@/components/sections/RollingStatement";
 
 export const metadata: Metadata = {
   title: "About | Ascending Software",
@@ -32,6 +33,12 @@ export default function AboutPage() {
       <div className="pb-20">
         <StatsBar />
       </div>
+
+      <RollingStatement
+        eyebrow="What Keeps Us Going"
+        word="TOGETHER"
+        description="Every engagement is a partnership, not a hand-off — we're still there long after launch."
+      />
 
       <WhyChooseUs narrative />
       <ProcessSteps />

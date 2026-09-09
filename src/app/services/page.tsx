@@ -4,6 +4,8 @@ import { SolutionsList } from "@/components/sections/SolutionsList";
 import { TechStack } from "@/components/sections/TechStack";
 import { SolidCTA } from "@/components/sections/SolidCTA";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { RollingStatement } from "@/components/sections/RollingStatement";
+import FeatureShaderCards from "@/components/ui/feature-shader-cards";
 
 export const metadata: Metadata = {
   title: "Services | Ascending Software",
@@ -20,6 +22,12 @@ export default function ServicesPage() {
         description="From your first customer-facing website to the event-driven platforms that run your operations — here is the full range of what Ascending Software designs, builds and maintains."
       />
 
+      <RollingStatement
+        eyebrow="What We Build"
+        word="SYSTEMS"
+        description="Not one-off features — the connective architecture your business runs on for years."
+      />
+
       <section className="mx-auto max-w-6xl px-6 pb-6 sm:px-8">
         <SectionHeading
           eyebrow="Full Scope"
@@ -30,6 +38,8 @@ export default function ServicesPage() {
       </section>
 
       <SolutionsList />
+
+      <FeatureShaderCards />
 
       <TechStack />
 
